@@ -21,6 +21,11 @@ def reverse_complement(DNA):
     return rev_comp
 def main():
     #input should be the DNA seq you want to transcribe
+    if len(sys.argv)<2:
+        print 'please enter DNA sequence to transcribe'         
+        sys.exit()
+    elif len(sys.argv)>2:
+        print 'too many inputs, only used first entry'
     DNA = sys.argv[1]
     rev_comp = reverse_complement(DNA)
     print rev_comp
