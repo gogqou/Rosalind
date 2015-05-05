@@ -8,6 +8,7 @@ Created on May 5, 2015
 import sys
 import reverse_complement
 def parse_fa_format(txtfile):
+    #read in txt file with >label + sequence afterwards
     seq = ''
     file = open(txtfile, 'r')
     for line in file:
@@ -17,7 +18,7 @@ def parse_fa_format(txtfile):
     return seq
 
 def reverse_palindrome(dna, size):
-    
+    #check reverse complement for identity as we move through the sequence
     for i in range(len(dna)-size+1):
         substr = dna[i:i+size]
         rev = reverse_complement.reverse_complement(substr)
