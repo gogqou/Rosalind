@@ -8,6 +8,7 @@ def transcribe(DNA):
     transcribe_dict = {}
     RNA = ''
     for i in range(len(DNA)):
+        #the only difference between RNA and DNA is that in RNA, U replaces T
         if DNA[i] == 'T':
             RNA= RNA + 'U'
         else: 
