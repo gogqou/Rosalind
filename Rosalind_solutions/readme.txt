@@ -9,3 +9,4 @@ GC 		Computing GC Content
 PROT 	Translating RNA into Protein 
 SUBS 	Finding a Motif in DNA 
 REVP 	Locating Restriction Sites  
+HAMM 	Counting Point Mutations 
