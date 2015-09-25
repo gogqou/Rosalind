@@ -19,10 +19,6 @@ from Bio import SeqIO
 import sys
 import difflib
 import itertools
-def check_overlap(seq1, seq2, overlap_length):
-    s1 = str(seq1[:overlap_length])
-    s2=str( seq2[-overlap_length:])
-    return s1 ==s2
 def overlap_graphs(seq_dict):
     #takes input of a dictionary of sequences (based on the SeqIO index format
     #where both sequence id and name are attributes of the value
