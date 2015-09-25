@@ -29,7 +29,10 @@ def translate(codonfile = '/home/gogqou/Documents/codon.txt', RNA = 'AUG'):
     protein = ''
     for i in range(len(RNA)/3):
         AA = codon_dict[RNA[3*i:3*i+3]]
-        protein = protein+AA
+        if AA == 'Stop':
+            break
+        else:
+            protein = protein+AA
     return protein
 if __name__ == '__main__':
     translate()
