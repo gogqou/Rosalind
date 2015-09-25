@@ -10,4 +10,5 @@ PROT 	Translating RNA into Protein
 SUBS 	Finding a Motif in DNA 
 REVP 	Locating Restriction Sites  
 HAMM 	Counting Point Mutations
-GRPH 	Overlap Graphs  
+GRPH 	Overlap Graphs
+MRNA 	Inferring mRNA from Protein   
