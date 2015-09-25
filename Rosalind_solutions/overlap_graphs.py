@@ -31,7 +31,9 @@ def overlap_graphs(seq_dict):
     for k,k2 in itertools.combinations(seq_dict, 2):
         v =seq_dict [k]
         v2=seq_dict[k2]
-        if check_overlap(v.seq, v2.seq,3):
+        s1 = str(v.seq[:3])
+        s2 = str(v2.seq[-3:])
+        if s1==s2:
             #can choose to make it a directed graph two ways
             #in my check_overlap, I'm checking if the prefix of s1 matches
             #the suffix of s2
@@ -39,7 +41,9 @@ def overlap_graphs(seq_dict):
             #to make it a directed graph
             #or I could've changed which suffix and prefix I was checking
             overlapGraph.append((v2.name, v.name))
-        if check_overlap(v2.seq, v.seq,3):
+        s1 = str(v2.seq[:3])
+        s2 = str(v.seq[-3:])    
+        if s1==s2:
             overlapGraph.append((v.name, v2.name))
     return overlapGraph
 
