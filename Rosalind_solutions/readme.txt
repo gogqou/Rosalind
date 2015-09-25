@@ -11,3 +11,4 @@ SUBS 	Finding a Motif in DNA
 REVP 	Locating Restriction Sites  
 HAMM 	Counting Point Mutations 
 IPRB 	Mendel's First Law 
+FIBD 	Mortal Fibonacci Rabbits 
