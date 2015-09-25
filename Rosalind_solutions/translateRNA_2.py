@@ -23,16 +23,13 @@ def parse_txt(txtfile):
         newline = newline.split(' ')
         dict[newline[0]] = newline[1]
     return dict
-def translate():
+def translate(codonfile = '/home/gogqou/Documents/codon.txt', RNA = 'AUG'):
     
-    codonfile = sys.argv[1]
-    RNA = sys.argv[2]
     codon_dict = parse_txt(codonfile)
     protein = ''
     for i in range(len(RNA)/3):
         AA = codon_dict[RNA[3*i:3*i+3]]
         protein = protein+AA
-    print protein
     return protein
 if __name__ == '__main__':
     translate()
