@@ -63,6 +63,7 @@ def main():
     np.set_printoptions(threshold=1000, linewidth=1000, precision = 5, suppress = False)
     if len(sys.argv)<2:
         print 'provide file location of input fasta file of DNA strings'
+        sys.exit()
     if len(sys.argv)>2:
         print 'only used first input'
     input_file = sys.argv[1]
