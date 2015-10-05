@@ -50,6 +50,10 @@ def find_stop(sequence, start_index):
             continue
     return len(sequence)
 def main():
+    if len(sys.argv)<2:
+        print 'provide file location of input fasta file of DNA sequence'
+    if len(sys.argv)>2:
+        print 'only used first input'
     input_file = sys.argv[1]
     record_dict = SeqIO.index(input_file, "fasta")
     for v in record_dict.itervalues():
