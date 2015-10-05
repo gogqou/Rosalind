@@ -29,7 +29,9 @@ def make_profile(DNA_dictionary, string_length):
     C = np.zeros([string_length,1])
     G = np.zeros([string_length,1])
     T = np.zeros([string_length,1])
+    #iterate through each position in the DNA string
     for i in range(string_length):
+        #iterate through each entry in the list of DNA strings
         for v in DNA_dictionary.itervalues():
             if v.seq[i] == 'A':
                 A[i] = A[i]+1
@@ -42,7 +44,11 @@ def make_profile(DNA_dictionary, string_length):
             else:
                 print 'non triggered'
         current= [A[i], C[i], G[i], T[i]] 
+        #put all the current counts in a list
+        #find the index of the maximum value
         max_index = np.argmax(current)
+        #iterate through the possibilities to assign the consensus 
+        #nucleotide for this position
         if max_index ==0:
             consensusSeq=consensusSeq+'A'
         elif max_index ==1:
@@ -60,17 +66,18 @@ def main():
     if len(sys.argv)>2:
         print 'only used first input'
     input_file = sys.argv[1]
+    #put all the DNA strings into a dictionary using BioPython
     record_dict = SeqIO.index(input_file, "fasta")
     first_key =list(record_dict.keys())[0]
+    #figure out how long the DNA string is
     DNAlength= len( record_dict[first_key].seq)
     [consensus, A,C,G,T] = make_profile(record_dict, DNAlength)
+    
     print consensus
     print 'A: ', A.astype(int)
     print 'C: ', C.astype(int)
     print 'G: ', G.astype(int)
     print 'T: ', T.astype(int)
-    print len(consensus)
-    print DNAlength
     return 1
 if __name__ == '__main__':
     main()
