@@ -12,3 +12,4 @@ REVP 	Locating Restriction Sites
 HAMM 	Counting Point Mutations
 GRPH 	Overlap Graphs
 MRNA 	Inferring mRNA from Protein   
+CONS 	Consensus and Profile 
